@@ -1,0 +1,68 @@
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="signup-form">
+                    <!--sign up form-->
+                    <h2>New User Signup!</h2>
+                    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+                        novalidate>
+                        <input type="text" name="username" [(ngModel)]="form.username" required minlength="3"
+                            maxlength="30" #username="ngModel" placeholder="Name" />
+                        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                            <div *ngIf="username.errors.required">
+                                Username is required
+                            </div>
+                            <div *ngIf="username.errors.minlength">
+                                Username must be at least 3 characters
+                            </div>
+                            <div *ngIf="username.errors.maxlength">
+                                Username must be at most 20 characters
+                            </div>
+                        </div>
+                        <input type="email" name="email" [(ngModel)]="form.email" required email #email="ngModel"
+                            placeholder="Email Address" />
+                        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                            <div *ngIf="email.errors.required">
+                                Email is required
+                            </div>
+                            <div *ngIf="email.errors.email">
+                                Email must be a valid email address
+                            </div>
+                        </div>
+
+                        <input type="password" name="password" [(ngModel)]="form.password" required minlength="6"
+                            #password="ngModel" placeholder="Password" />
+                        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                            <div *ngIf="password.errors.required">
+                                Password is required
+                            </div>
+                            <div *ngIf="password.errors.minlength">
+                                Password must be at least 6 characters
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Sign up</button>
+                        <br>
+                        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                            Signup failed!<br />{{ errorMessage }}
+                        </div>
+
+                        <li>
+                            <span>
+                                have an account? <a routerLink="/login">Login</a>
+                            </span>
+                        </li>
+                    </form>
+                    
+                    <div class="alert alert-success" *ngIf="isSuccessful" routerLink="home">
+                        Your registration is successful!
+                      </div>
+                </div>
+                <!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--/form-->
