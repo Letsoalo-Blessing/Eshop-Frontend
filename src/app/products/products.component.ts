@@ -28,6 +28,7 @@ export class ProductsComponent implements OnInit {
 
   loadProducts() {
     this.productservice.getAllProduct().subscribe(
+
       (items: Product[]) => {
         this.products.splice(0, this.products.length);
         this.products.push(...items);
@@ -44,5 +45,9 @@ export class ProductsComponent implements OnInit {
         console.log(this.categorys);
       }
     );
+  }
+
+  sngleProduct(id: number) {
+    this.router.navigate(['/single-products', id]);
   }
 }

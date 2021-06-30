@@ -20,6 +20,9 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestComponent } from './test/test.component';
 import { ModBoardComponent } from './mod-board/mod-board.component';
+import { ListProductComponent } from './list-product/list-product.component';
+import { DispCategoryComponent } from './disp-category/disp-category.component';
+import { SingleProductComponent } from './single-product/single-product.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ModBoardComponent } from './mod-board/mod-board.component';
     RegisterComponent,
     ContactComponent,
     TestComponent,
-    ModBoardComponent
+    ModBoardComponent,
+    ListProductComponent,
+    DispCategoryComponent,
+    SingleProductComponent
   ],
   imports: [
     BrowserModule,

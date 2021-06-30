@@ -4,7 +4,7 @@
         <div class="breadcrumbs">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
-                <li class="active">Shop</li>
+                <li class="active">Shop by Category</li>
             </ol>
         </div>
         <div class="row">
@@ -17,7 +17,7 @@
                         <div class="panel panel-default" *ngFor="let category of categorys">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a [routerLink]="['/category', category.id]">{{category.name}}</a>
+                                    <a [routerLink]="['/category/', category.id]">{{category.name}}</a>
                                 </h4>
                             </div>
                         </div>
@@ -34,14 +34,14 @@
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <a><img [src]="product.pictureUrl" alt="Picture URL" /></a>
-                                    <h2>{{product.price | currency:'USD'}}</h2>
+                                    <img [src]="product.pictureUrl" alt="Picture URL" />
+                                    <h2>R {{product.price}}</h2>
                                     <p>{{product.description}}</p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
                                 <div class="product-overlay">
                                     <div class="overlay-content">
-                                        <h2>{{product.price | currency:'USD'}}</h2>
+                                        <h2>R {{product.price}}</h2>
                                         <p>{{product.name}}</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                     </div>
@@ -50,7 +50,7 @@
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
                                     <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                    <li><a [routerLink]="['/single-products',product.id]"><i class="fa fa-plus-square"></i>View Item</a></li>
+                                    <li><a [routerLink]="['/single-products']"><i class="fa fa-plus-square"></i>View Item</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,7 +62,6 @@
                     <li><a href="">3</a></li>
                     <li><a href="">&raquo;</a></li>
                 </ul>
-                <!--features_items-->
             </div>
         </div>
     </div>
