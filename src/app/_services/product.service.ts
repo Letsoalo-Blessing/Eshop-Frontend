@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {Product,Category, Product2} from './../modal/modal'
-
+import {Category} from './../modal/modal'
+import { Product } from '../modal/product';
 
 const API_URL='http://localhost:8080/api/product/'
 const API_URL_cat ='http://localhost:8080/api/category/'
@@ -26,8 +26,8 @@ export class ProductService {
     return this.http.get<Product[]>(API_URL+`findProductsForCategory/${id}`);
   }
 
-  findProductById(Id:number): Observable<Product[]>{
-    return this.http.get<Product[]>(API_URL+`findProductById/${Id}`);
+  findProductById(Id:number): Observable<Product>{
+    return this.http.get<Product>(API_URL+`findProductById/${Id}`);
   }
 
   findByName(name:string): Observable<Product[]>{

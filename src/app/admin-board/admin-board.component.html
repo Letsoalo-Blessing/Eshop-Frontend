@@ -1,27 +1,26 @@
 <div class="container" *ngIf="currentUser;">
     <div class="row" style="margin-top: 40px;">
-    <div class="col-lg-4">
-        <div class="card">
-            <div class="card-body" style="background-color: #e15f41; padding: 0px; padding-left: 10px; color: wheat;">
-                <h2 class="card-title">Your Profile {{currentUser.username}}</h2>
-            </div>
-            <div>
-                <ul class="list-group" *ngFor="let cat of categorys">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span style="cursor: pointer;" [routerLink]="['categories/', cat.id]"
-                            routerLinkActive="router-link-active"> {{cat.name}}</span>
-                        <button type="button" class="btn btn-outline-primary btn-sm" (click)="addProduct(cat.id)">Add
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body" style="background-color: #e15f41; padding: 0px; padding-left: 10px; color: wheat;">
+                    <h2 class="card-title">Your Profile {{currentUser.username}}</h2>
+                </div>
+                <div>
+                    <ul class="list-group" *ngFor="let cat of categorys">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span style="cursor: pointer;" [routerLink]="['categories/', cat.id]" routerLinkActive="router-link-active"> {{cat.name}}</span>
+                            <button type="button" class="btn btn-outline-primary btn-sm" (click)="addProduct(cat.id)">Add
                             product</button>
-                    </li>
-                </ul>
-            </div>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="card-body">
-                <button type="button" class="btn btn-warning" style="margin: 0 10px;">Update</button>
-                <button type="button" class="btn btn-info">Add
+                <div class="card-body">
+                    <button type="button" class="btn btn-warning" style="margin: 0 10px;">Update</button>
+                    <button type="button" class="btn btn-info">Add
                     category</button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>

@@ -13,12 +13,10 @@ export interface Category {
     name: String;
     pictureUrl:string;
 }
-
-export class Product2{
-    id:number;
-    name:string;
-    description:string;
-    price:number;
-    pictureUrl:string;
-    categoryId:number;
-}
+export interface Cart {
+    id: number;
+    name: string;
+    price: number;
+    quantity: number;
+    pictureUrl: string;
+  }
